@@ -2596,7 +2596,7 @@ html {
   }
 
   .section-2 {
-    background-color: #edf5e1;
+    background-color: var(--section2-bkgr-color);
     border-bottom: 2px solid #379683;
     padding: 120px 10px;
     line-height: 48px;
