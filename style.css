@@ -232,7 +232,7 @@ html {
   body {
     min-height: 100%;
     color: #333;
-    background-color: #dad7cd;
+    background-color: var(--body-bkgr-color);
     margin: 0;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -2128,6 +2128,13 @@ html {
     --black: #192024;
     --dim-gray-3: #676770;
     --light-slate-gray: #8e8e9c;
+    --creamy-white: #dad7cd;
+    --navigation-bar-bkgr-color: var(--creamy-white);
+    --section2-bkgr-color: var(--creamy-white);
+    --section3-bkgr-color: var(--creamy-white);
+    --section4-bkgr-color: var(--creamy-white);
+    --section6-bkgr-color: var(--creamy-white);
+    --body-bkgr-color: var(--creamy-white);
   }
 
   .w-layout-blockcontainer {
@@ -2151,7 +2158,7 @@ html {
 
   body {
     color: #6a859c;
-    background-color: #dad7cd;
+    background-color: var(--body-bkgr-color);
     font-family: Open Sans, sans-serif;
     font-size: 16px;
     line-height: 20px;
@@ -2283,7 +2290,7 @@ html {
 
   .navigation-bar {
     color: #5cdb95;
-    background-color: #edf5e1;
+    background-color: var(--navigation-bar-bkgr-color);
   }
 
   .brand-text {
@@ -2548,7 +2555,7 @@ html {
   }
 
   .body {
-    background-color: #dad7cd;
+    background-color: var(--body-bkgr-color);
   }
 
   .heading {
@@ -2643,7 +2650,7 @@ html {
   }
 
   .section-3 {
-    background-color: #edf5e1;
+    background-color: var(--section3-bkgr-color);
     padding: 120px 10px;
   }
 
