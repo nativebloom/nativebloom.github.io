@@ -2129,12 +2129,13 @@ html {
     --dim-gray-3: #676770;
     --light-slate-gray: #8e8e9c;
     --creamy-white: #dad7cd;
-    --navigation-bar-bkgr-color: var(--creamy-white);
-    --section2-bkgr-color: var(--creamy-white);
-    --section3-bkgr-color: var(--creamy-white);
-    --section4-bkgr-color: var(--creamy-white);
-    --section6-bkgr-color: var(--creamy-white);
-    --body-bkgr-color: var(--creamy-white);
+    --very-light-green: #f4f9ec;
+    --navigation-bar-bkgr-color: var(--very-light-green);
+    --section2-bkgr-color: var(--very-light-green);
+    --section3-bkgr-color: var(--very-light-green);
+    --section4-bkgr-color: var(--very-light-green);
+    --section6-bkgr-color: var(--very-light-green);
+    --body-bkgr-color: var(--very-light-green);
   }
 
   .w-layout-blockcontainer {
