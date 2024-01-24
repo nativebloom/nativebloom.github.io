@@ -2403,6 +2403,22 @@ html {
     display: inline-block;
   }
 
+  .hollow-button2 {
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 30px;
+    font-weight: 300;
+    line-height: 21px;
+    text-decoration: none;
+    transition: background-color .3s, border .3s, color .3s;
+    display: inline-block;
+  }
+
   .hollow-button:hover {
     color: #2e9dff;
     border-color: #2e9dff;
@@ -2971,5 +2987,16 @@ html {
 
     .button2 {
       margin-bottom: 25px;
+    }
+
+    .container-5 {
+      text-align: center;
+    }
+
+    .paragraph-10 {
+      color: var(--francis-1);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 28px;
     }
   }
