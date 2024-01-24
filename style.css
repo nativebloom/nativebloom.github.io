@@ -232,7 +232,7 @@ html {
   body {
     min-height: 100%;
     color: #333;
-    background-color: #fff;
+    background-color: var(--body-bkgr-color);
     margin: 0;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -2128,6 +2128,13 @@ html {
     --black: #192024;
     --dim-gray-3: #676770;
     --light-slate-gray: #8e8e9c;
+    --creamy-white: #dad7cd;
+    --navigation-bar-bkgr-color: var(--creamy-white);
+    --section2-bkgr-color: var(--creamy-white);
+    --section3-bkgr-color: var(--creamy-white);
+    --section4-bkgr-color: var(--creamy-white);
+    --section6-bkgr-color: var(--creamy-white);
+    --body-bkgr-color: var(--creamy-white);
   }
 
   .w-layout-blockcontainer {
@@ -2151,7 +2158,7 @@ html {
 
   body {
     color: #6a859c;
-    background-color: #edeff2;
+    background-color: var(--body-bkgr-color);
     font-family: Open Sans, sans-serif;
     font-size: 16px;
     line-height: 20px;
@@ -2283,11 +2290,11 @@ html {
 
   .navigation-bar {
     color: #5cdb95;
-    background-color: #edf5e1;
+    background-color: var(--navigation-bar-bkgr-color);
   }
 
   .brand-text {
-    color: #5cdb95;
+    color: black;
     text-align: center;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -2359,7 +2366,7 @@ html {
   }
 
   .hero-heading {
-    color: #edf5e1;
+    color: white;
     letter-spacing: 4px;
     text-transform: uppercase;
     text-shadow: 0 2px 1px rgba(0, 0, 0, .95);
@@ -2548,7 +2555,7 @@ html {
   }
 
   .body {
-    background-color: #edf5e1;
+    background-color: var(--body-bkgr-color);
   }
 
   .heading {
@@ -2589,7 +2596,7 @@ html {
   }
 
   .section-2 {
-    background-color: #edf5e1;
+    background-color: var(--section2-bkgr-color);
     border-bottom: 2px solid #379683;
     padding: 120px 10px;
     line-height: 48px;
@@ -2643,7 +2650,7 @@ html {
   }
 
   .section-3 {
-    background-color: #edf5e1;
+    background-color: var(--section3-bkgr-color);
     padding: 120px 10px;
   }
 
@@ -2738,7 +2745,7 @@ html {
   }
 
   .button2 {
-    background-color: var(--francis-2);
+    background-color: #8ee4af;
     color: #05386b;
     text-align: center;
     letter-spacing: 2px;
