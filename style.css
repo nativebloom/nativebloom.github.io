@@ -2136,6 +2136,7 @@ html {
     --section4-bkgr-color: var(--very-light-green);
     --section6-bkgr-color: var(--very-light-green);
     --body-bkgr-color: var(--very-light-green);
+    --title-text-color: var(--very-light-green);
   }
 
   .w-layout-blockcontainer {
@@ -2367,7 +2368,7 @@ html {
   }
 
   .hero-heading {
-    color: white;
+    color: var(--title-text-color);
     letter-spacing: 4px;
     text-transform: uppercase;
     text-shadow: 0 2px 1px rgba(0, 0, 0, .95);
