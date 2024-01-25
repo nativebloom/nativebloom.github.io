@@ -2761,10 +2761,15 @@ html {
   .columns-2 {
     background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
     background-position: 50%;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  #section-5-image {
+    background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .heading-7 {
