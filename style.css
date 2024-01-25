@@ -2330,7 +2330,7 @@ html {
   }
 
   .section.whatwedo {
-    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_2416_WebsiteWWD.JPG?raw=true");
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_2416_WebsiteWWD_Brightened.png?raw=true");
     background-position: 0 0, 50%;
     background-size: auto, cover;
     border-bottom: 0 solid #8ee4af;
@@ -2761,7 +2761,7 @@ html {
   .columns-2 {
     background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
     background-position: 50%;
-    background-size: cover;
+    background-size: 100% auto;
     padding-top: 0;
     padding-bottom: 0;
   }
