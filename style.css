@@ -2768,8 +2768,13 @@ html {
 
   #section-5-image {
     background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
-    background-size: 100% 100%;
+    background-size: auto 100%;
     background-repeat: no-repeat;
+  }
+
+  #section-5-img-div {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .heading-7 {
