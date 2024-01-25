@@ -2761,7 +2761,8 @@ html {
   .columns-2 {
     background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
     background-position: 50%;
-    background-size: 100% auto;
+    background-size: contain;
+    background-repeat: no-repeat
     padding-top: 0;
     padding-bottom: 0;
   }
