@@ -2770,6 +2770,7 @@ html {
     background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    height: 100%;
   }
 
   .heading-7 {
