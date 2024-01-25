@@ -2770,6 +2770,7 @@ html {
     height: auto;
     width: 100%;
     display: block;
+    object-fit: fill;
   }
 
   #section-5-img-div {
