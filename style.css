@@ -2767,9 +2767,8 @@ html {
   }
 
   #section-5-image {
-    height: auto;
+    height: 100%;
     width: 100%;
-    display: block;
     object-fit: fill;
   }
 
