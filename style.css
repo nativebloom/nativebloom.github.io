@@ -2769,6 +2769,8 @@ html {
   #section-5-image {
     background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
     background-size: auto 100%;
+    height: 100%;
+    width: auto;
     background-repeat: no-repeat;
   }
 
