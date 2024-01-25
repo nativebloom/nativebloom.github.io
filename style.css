@@ -2767,16 +2767,15 @@ html {
   }
 
   #section-5-image {
-    background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
-    background-size: auto 100%;
     height: auto;
     width: 100%;
-    background-repeat: no-repeat;
+    display: block;
   }
 
   #section-5-img-div {
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
   }
 
   .heading-7 {
