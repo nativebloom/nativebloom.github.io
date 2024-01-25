@@ -2759,9 +2759,9 @@ html {
   }
 
   .columns-2 {
-    background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
+    /*background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
     background-position: 50%;
-    background-size: cover;
+    background-size: cover;*/
     padding-top: 0;
     padding-bottom: 0;
   }
