@@ -2766,6 +2766,14 @@ html {
     padding-bottom: 0;
   }
 
+  #section-5-interior {
+      display: table;
+  }
+
+  #section-5-text-div {
+      display: table-cell;
+  }
+
   #section-5-image {
     height: 100%;
     width: 100%;
@@ -2775,6 +2783,7 @@ html {
   #section-5-img-div {
     padding-left: 0px;
     padding-right: 0px;
+    display: table-cell;
     overflow: hidden;
     background-image: url("https://github.com/nativebloom/nativebloom.github.io/blob/main/photos/IMG_1520_Website5.JPG?raw=true");
     background-position: 50%;
