@@ -2793,6 +2793,7 @@ html {
 
   .vertical-button {
       margin-bottom: 5px; /* Add margin between buttons */
+      display: inline-block; /* Set width to wrap text content */
   }
 
   .heading-7 {
