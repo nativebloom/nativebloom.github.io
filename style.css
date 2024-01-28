@@ -2786,6 +2786,15 @@ html {
     flex: 1;
   }
 
+  .vertical-button-container {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .vertical-button {
+      margin-bottom: 5px; /* Add margin between buttons */
+  }
+
   .heading-7 {
     color: var(--francis-5);
     text-align: center;
