@@ -2461,6 +2461,11 @@ html {
   .section-title-group {
     margin-bottom: 60px;
   }
+
+  .main-content {
+padding-top: 20px;
+padding-bottom: 20px;
+}
   
   .form-field {
     height: 45px;
@@ -2475,8 +2480,8 @@ html {
   }
   
   .footer {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   
   .footer.center {
