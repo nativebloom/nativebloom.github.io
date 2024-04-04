@@ -3122,3 +3122,7 @@ html {
     }
 
   }
+.copyright-statement {
+	display: flex;
+	justify-content: center;
+}
