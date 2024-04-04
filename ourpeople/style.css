@@ -2133,6 +2133,7 @@ html {
     --black: #192024;
     --dim-gray-3: #676770;
     --light-slate-gray: #8e8e9c;
+    --dark-blue-background: rgb(5, 56, 107);
   }
   
   .w-layout-blockcontainer {
@@ -2915,7 +2916,7 @@ html {
   }
   
   .section-7 {
-    background-color: var(--francis6);
+    background-color: var(--dark-blue-background);
     padding-top: 20px;
     padding-bottom: 20px;
   }
@@ -2937,15 +2938,21 @@ html {
   }
   
   .heading-11 {
-    color: var(--francis-1);
+    color: var(--francis-5);
     margin-top: 0;
     padding-top: 20px;
     padding-left: 20%;
   }
+
+  .heading-12 {
+    color: var(--francis-5);
+    margin-top: 0;
+    padding-left: 20%;
+  }
   
   .paragraph-11 {
-    color: var(--francis-1);
-    padding-top: 20px;
+    color: var(--francis-5);
+    padding-top: 10px;
     padding-left: 20%;
     font-size: 24px;
   }
