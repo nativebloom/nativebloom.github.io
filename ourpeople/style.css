@@ -3157,3 +3157,7 @@ html {
       margin-bottom: 25px;
     }
   }
+  .copyright-statement {
+	display: flex;
+	justify-content: center;
+    }
