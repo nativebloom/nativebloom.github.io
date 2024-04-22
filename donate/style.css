@@ -8,8 +8,14 @@ html {
     margin: 0;
   }
   
-  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  article, aside, details, figcaption, figure, header, hgroup, main, menu, nav, section, summary {
     display: block;
+  }
+
+  footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
   }
   
   audio, canvas, progress, video {
@@ -2465,6 +2471,7 @@ html {
   .main-content {
 padding-top: 20px;
 padding-bottom: 20px;
+min-height: 95%;
 }
   
   .form-field {
