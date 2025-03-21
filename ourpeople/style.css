@@ -48,19 +48,19 @@ nav ul li a {
 
 .logo-container {
     display: flex;
-    align-items: center; /* Aligns the image and text */
+    align-items: center;
 }
 
 .logo {
-    width: 50px; /* Adjust size as needed */
+    width: 50px;
     height: auto;
-    margin-right: 10px; /* Space between logo and text */
-    border-radius: 10%; /* Makes it circular (optional) */
+    margin-right: 10px;
+    border-radius: 10%;
 }
 
 /* Hero Section */
 .hero {
-    background-image: url("flower.JPG");
+    background-image: url("../photos/bee_bush.jpg");
     color: white;
     padding: 80px 20px;
     position: relative;
