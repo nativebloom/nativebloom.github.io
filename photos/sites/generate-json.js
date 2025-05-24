@@ -7,6 +7,8 @@ const OUTPUT = path.join(__dirname, 'gallery.json');
 const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
 
 async function buildGallery() {
+  console.log('Building Gallery Index...');
+
   const items = [];
 
   const folders = await fs.promises.readdir(BASE_DIR, { withFileTypes: true });
@@ -15,16 +17,20 @@ async function buildGallery() {
     const folderName = dirent.name;
     const folderPath = path.join(BASE_DIR, folderName);
 
+    console.log('Searching for folder name...');
     let displayName = folderName;
     const nameFilePath = path.join(folderPath, 'NAME.txt');
     if (fs.existsSync(nameFilePath)) {
       displayName = (await fs.promises.readFile(nameFilePath, 'utf8')).trim();
+      console.log('Found folder name ' + displayName);
     }
 
+    console.log('Searching for image files...');
     const files = await fs.promises.readdir(folderPath, { withFileTypes: true });
     const images = files
       .filter(f => f.isFile() && IMAGE_EXTS.includes(path.extname(f.name).toLowerCase()))
       .map(f => f.name);
+    console.log('Found images ' + images);
 
     items.push({ folder: folderName, images });
   }

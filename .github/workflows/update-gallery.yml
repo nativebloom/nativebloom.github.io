@@ -29,9 +29,8 @@ jobs:
       - name: Generate gallery.json
         run: npm run generate-gallery
 
-      - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'chore: update gallery.json'
-          file_pattern: 'gallery.json'
-          branch: ${{ github.ref_name }}
+      - name: Commit and push changes
+        run: |
+          git add photos/sites/gallery.json
+          git commit -m "chore: update gallery.json" || echo "No changes to commit"
+          git push origin ${{ github.ref_name }}
