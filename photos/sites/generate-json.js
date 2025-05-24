@@ -25,6 +25,33 @@ async function buildGallery() {
       console.log('Found folder name ' + displayName);
     }
 
+    console.log('Searching for event date...');
+    let date = new Date().toISOString().slice(0, 10); // Default to today's date
+    const dateFilePath = path.join(folderPath, 'DATE.txt');
+
+    if (fs.existsSync(dateFilePath)) {
+      try {
+        const fileContent = fs.readFileSync(dateFilePath, 'utf8').trim();
+        const [month, day, year] = fileContent.split('/').map(Number);
+
+        // Validate the extracted numbers
+        if (
+          !isNaN(month) && month >= 1 && month <= 12 &&
+          !isNaN(day) && day >= 1 && day <= 31 &&
+          !isNaN(year) && year > 0
+        ) {
+          date = new Date(year, month - 1, day); // Months are zero-based in JavaScript
+          console.log('Parsed date:', date.toISOString().slice(0, 10));
+        } else {
+          console.log('Invalid date format in DATE.txt. Using current date.');
+        }
+      } catch (err) {
+        console.error('Error reading DATE.txt:', err);
+      }
+    } else {
+      console.log('DATE.txt not found. Using default date.');
+    }
+
     console.log('Searching for image files...');
     const files = await fs.promises.readdir(folderPath, { withFileTypes: true });
     const images = files
@@ -32,7 +59,7 @@ async function buildGallery() {
       .map(f => f.name);
     console.log('Found images ' + images);
 
-    items.push({ folder: folderName, displayName, images });
+    items.push({ folder: folderName, displayName, date, images });
   }
 
   // Write JSON with 2-space indentation
