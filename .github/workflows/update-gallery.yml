@@ -31,8 +31,8 @@ jobs:
 
       - name: Set up Git configuration
         run: |
-          git config --global user.name "BKell-Dog"
-          git config --global user.email "bkelldog59@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
 
       - name: Commit and push changes
         run: |
