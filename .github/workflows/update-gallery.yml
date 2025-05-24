@@ -1,0 +1,41 @@
+name: Update Gallery JSON
+
+on:
+  push:
+    paths:
+      - 'photos/sites/**'
+      - 'generate-gallery.js'
+      - 'package.json'
+      - '.github/workflows/update-gallery.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # needed for pushing commits
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate gallery.json
+        run: npm run generate-gallery
+
+      - name: Set up Git configuration
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add photos/sites/gallery.json
+          git commit -m "chore: update gallery.json" || echo "No changes to commit"
+          git push origin ${{ github.ref_name }}

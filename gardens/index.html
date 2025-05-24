@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our People | Native Bloom Initiative</title>
+    <link rel="icon" href="../photos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../fragments/style.css">
+</head>
+<script src="../script.js" defer></script>
+<body>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+
+        h1 {
+          text-align: center;
+        }
+
+        .folder {
+          margin-bottom: 40px;
+        }
+
+        .folder h2 {
+          margin-bottom: 10px;
+        }
+
+        .image-row {
+          display: flex;
+          overflow-x: auto;
+          gap: 10px;
+          padding-bottom: 10px;
+        }
+
+        .image-row img {
+          height: 150px;
+          border-radius: 5px;
+          transition: transform 0.2s;
+        }
+
+        .image-row img:hover {
+          transform: scale(1.05);
+        }
+    </style>
+    <header id="header" class="fetch-remote"></header>
+    <section id="gallery">
+        <div id="lightbox-overlay" class="hidden">
+          <span id="lightbox-close">&times;</span>
+          <img id="lightbox-img" src="" alt="Enlarged photo" />
+        </div>
+    </section>
+    
+    <footer id="footer" class="fetch-remote"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.fetch-remote').forEach(async (el) => {
+          const id = el.id;
+          if (!id) {
+            console.warn('Element with class "fetch-remote" is missing an id.');
+            return;
+          }
+
+          try {
+            const response = await fetch(`../fragments/${id}.html`);
+            if (!response.ok) {
+              throw new Error(`Failed to fetch ${id}.html: ${response.statusText}`);
+            }
+            const html = await response.text();
+            el.innerHTML = html;
+          } catch (error) {
+            console.error(error);
+            el.innerHTML = `<div style="color: red;">Error loading ${id}.html</div>`;
+          }
+        });
+      });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('../photos/sites/gallery.json')
+        .then((response) => response.json())
+        .then((data) => {
+          const gallery = document.getElementById('gallery');
+
+          data.forEach((folder) => {
+            const folderDiv = document.createElement('div');
+            folderDiv.classList.add('folder');
+
+            const title = document.createElement('h2');
+            title.textContent = folder.displayName || folder.folder;
+            folderDiv.appendChild(title);
+
+            const imageRow = document.createElement('div');
+            imageRow.classList.add('image-row');
+
+            // This code will scroll the row of photos horizontally
+            // if the user scrolls while over it.
+            imageRow.addEventListener('wheel', (event) => {
+              // Prevent the default vertical scroll behavior
+              event.preventDefault();
+
+              // Scroll horizontally by the amount of vertical scroll
+              imageRow.scrollLeft += 20 * (event.deltaY / Math.abs(event.deltaY));
+            });
+
+            folder.images.forEach((imgName) => {
+              const img = document.createElement('img');
+              img.src = `../photos/sites/${folder.folder}/${imgName}`;
+              img.alt = '';
+              imageRow.appendChild(img);
+            });
+
+            folderDiv.appendChild(imageRow);
+            gallery.appendChild(folderDiv);
+          });
+        })
+        .catch((error) => {
+          console.error('Error fetching photo data:', error);
+        });
+    });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const gallery = document.getElementById('gallery');
+
+          gallery.addEventListener('click', (e) => {
+            const img = e.target;
+            if (img.tagName !== 'IMG') return;
+
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = '100vw';
+            overlay.style.height = '100vh';
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+            overlay.style.zIndex = 1000;
+
+            // Create enlarged image
+            const largeImg = document.createElement('img');
+            largeImg.src = img.src;
+            largeImg.alt = img.alt;
+            largeImg.style.maxWidth = '90%';
+            largeImg.style.maxHeight = '90%';
+            largeImg.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.5)';
+            largeImg.style.borderRadius = '4px';
+
+            // Append image to overlay
+            overlay.appendChild(largeImg);
+            document.body.appendChild(overlay);
+
+            // Close overlay on click
+            overlay.addEventListener('click', () => {
+              document.body.removeChild(overlay);
+            });
+          });
+        });
+        </script>
+</body>
+</html>

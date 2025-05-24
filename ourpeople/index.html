@@ -4,26 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our People | Native Bloom Initiative</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../photos/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <script src="script.js" defer></script>
 <body>
-    <header>
-        <div class="logo-container">
-          <a href="..\index.html"><img src="violets.png" alt="Native Bloom Logo" class="logo"></a>
-          <h1><a href="..\index.html">Native Bloom Initiative</a></h1>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="..\index.html">Home</a></li>
-            <li><a href="..\donate\index.html">Donate</a></li>
-            <li><a href="index.html">Our People</a></li>
-            <li><a href="..\sponsor\index.html">Sponsor a Garden</a></li>
-          </ul>
-        </nav>
-    </header>
-
+    <header id="header" class="fetch-remote"></header>
     <section class="hero">
         <div class="hero-content">
             <h2>Meet Our Executive Board</h2>
@@ -40,32 +26,47 @@
 
         <div class="executive-grid">
             <div class="executive-card">
-                <img src="Billy.png" alt="Billy">
+                <img src="../photos/Billy.png" alt="Billy">
                 <h3>Billy Kelly</h3>
                 <p>Executive Director</p>
             </div>
 
             <div class="executive-card">
-                <img src="Alex.png" alt="Alex">
+                <img src="../photos/Alex.png" alt="Alex">
                 <h3>Alex Benedetto</h3>
                 <p>Program Director</p>
             </div>
 
             <div class="executive-card">
-                <img src="Hunter.png" alt="Hunter">
+                <img src="../photos/Hunter.png" alt="Hunter">
                 <h3>Hunter McIntosh</h3>
                 <p>Fundraising Director</p>
             </div>
         </div>
     </section>
+    <footer id="footer" class="fetch-remote"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.fetch-remote').forEach(async (el) => {
+          const id = el.id;
+          if (!id) {
+            console.warn('Element with class "fetch-remote" is missing an id.');
+            return;
+          }
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: nativebloominitiative@gmail.com</p>
-    </section>
-
-    <footer>
-        <p>The Native Bloom Initiative, A NJ Nonprofit Corporation is a 501(c)3 charity. All donations are tax-deductible. EIN: 93-4759834</p>
-    </footer>
+          try {
+            const response = await fetch(`../fragments/${id}.html`);
+            if (!response.ok) {
+              throw new Error(`Failed to fetch ${id}.html: ${response.statusText}`);
+            }
+            const html = await response.text();
+            el.innerHTML = html;
+          } catch (error) {
+            console.error(error);
+            el.innerHTML = `<div style="color: red;">Error loading ${id}.html</div>`;
+          }
+        });
+      });
+    </script>
 </body>
 </html>
