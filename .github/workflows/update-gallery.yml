@@ -5,6 +5,7 @@ on:
     paths:
       - 'photos/sites/**'
       - 'generate-gallery.js'
+      - 'package.json'
       - '.github/workflows/update-gallery.yml'
 
 jobs:
@@ -21,8 +22,11 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Generate gallery.json
-        run: npm run photos/sites/generate-gallery
+        run: npm run generate-gallery
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
