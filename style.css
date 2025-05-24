@@ -7,7 +7,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Header */
 header {
     background: #4CAF50;
     color: white;
@@ -15,6 +14,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 header h1 {
@@ -58,6 +58,57 @@ nav ul li a {
     border-radius: 10%;
 }
 
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  header {
+    position: relative;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  nav ul.open {
+    display: block;
+  }
+
+  nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 6px;
+  }
+
+  nav ul li a:hover {
+    background: #f1f1f1;
+  }
+}
 
 .hero {
     background-image: url("./photos/bee_bush.jpg");

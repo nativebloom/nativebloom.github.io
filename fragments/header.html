@@ -1,0 +1,119 @@
+<header>
+  <style>
+    header {
+        background: #4CAF50;
+        color: white;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    header h1 {
+        margin: 0;
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    header h1 a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        width: 50px;
+        height: auto;
+        margin-right: 10px;
+        border-radius: 10%;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-button {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+
+      header {
+        position: relative;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 15px;
+        background: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        width: 200px;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+        padding: 10px 0;
+        z-index: 999;
+      }
+
+      nav ul.open {
+        display: block;
+      }
+
+      nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+
+      nav ul li a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: 6px;
+      }
+
+      nav ul li a:hover {
+        background: #f1f1f1;
+      }
+    }
+  </style>
+    <div class="logo-container">
+      <a href="..\index.html"><img src="../photos/violets.png" alt="Native Bloom Logo" class="logo"></a>
+      <h1><a href="..\index.html">Native Bloom Initiative</a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="..\index.html">Home</a></li>
+        <li><a href="..\donate\index.html">Donate</a></li>
+        <li><a href="index.html">Our People</a></li>
+        <li><a href="..\gardens\">Our Gardens</a></li>
+        <li><a href="..\sponsor\index.html">Sponsor a Garden</a></li>
+      </ul>
+    </nav>
+</header>

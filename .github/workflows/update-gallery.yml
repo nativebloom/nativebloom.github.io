@@ -1,0 +1,32 @@
+name: Update Gallery JSON
+
+on:
+  push:
+    paths:
+      - 'photos/sites/**'
+      - 'generate-gallery.js'
+      - '.github/workflows/update-gallery.yml'
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # needed for pushing commits
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Generate gallery.json
+        run: npm run photos/sites/generate-gallery
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update gallery.json'
+          file_pattern: 'gallery.json'
+          branch: ${{ github.ref_name }}

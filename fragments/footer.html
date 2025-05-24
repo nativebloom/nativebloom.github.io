@@ -1,0 +1,60 @@
+<div>
+    <style>
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        #contact {
+            background-image: url('../photos/horseback_1920x1000.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 50px 20px;
+            position: relative;
+            color: white;
+        }
+
+        #contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(1px);
+        }
+
+        .contact-content h2 {
+            font-size: 2.5em;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: nativebloominitiative@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>The Native Bloom Initiative, A NJ Nonprofit Corporation is a 501(c)3 charity. All donations are tax-deductible. EIN: 93-4759834</p>
+    </footer>
+</div>
