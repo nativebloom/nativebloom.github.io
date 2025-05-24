@@ -32,7 +32,7 @@ async function buildGallery() {
       .map(f => f.name);
     console.log('Found images ' + images);
 
-    items.push({ folder: folderName, images });
+    items.push({ folder: folderName, displayName, images });
   }
 
   // Write JSON with 2-space indentation
