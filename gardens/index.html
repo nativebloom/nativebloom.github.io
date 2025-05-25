@@ -31,6 +31,12 @@
           overflow-x: auto;
           gap: 10px;
           padding-bottom: 10px;
+          -ms-overflow-style: none;
+          scrollbar-width: none; 
+        }
+
+        .image-row::-webkit-scrollbar {
+          display: none; /* Hides scrollbar in Chrome, Safari, and Opera */
         }
 
         .image-row img {
